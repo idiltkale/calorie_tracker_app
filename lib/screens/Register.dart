@@ -65,7 +65,7 @@ class _RegisterPageState extends State<Register> {
                       cursorColor: Colors.white,
                       decoration: const InputDecoration(
                         prefixIcon: Icon(Icons.person, color: Colors.white),
-                        hintText: 'User ID',
+                        hintText: 'Name',
                         hintStyle: TextStyle(color: Colors.white),
                       ),
                     ),
@@ -222,7 +222,6 @@ class _RegisterPageState extends State<Register> {
     User? user = await _auth.signUpWithEmailAndPassword(email, password);
 
     if (user != null) {
-      print("user is successfully created");
 
       await _authService.saveUserData(
           username, email, age, weight, height, _selectedGender);

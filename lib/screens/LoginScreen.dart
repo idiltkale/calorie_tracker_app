@@ -6,9 +6,9 @@ import 'package:final_project/screens/FirstScreen.dart';
 import 'Register.dart';
 
 class LoginScreen extends StatefulWidget {
-  final String? selectedGender;
+ 
 
-  LoginScreen({Key? key, this.selectedGender}) : super(key: key);
+  LoginScreen({Key? key}) : super(key: key);
 
   @override
   _LoginScreenState createState() => _LoginScreenState();
@@ -28,9 +28,8 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
+   
     return Scaffold(
-      resizeToAvoidBottomInset: false,
       body: Center(
         child: Container(
           decoration: BoxDecoration(
@@ -91,7 +90,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           borderSide: BorderSide(color: Colors.white)),
                     ),
                   ),
-                  SizedBox(height: size.height * 0.02),
+                  SizedBox(height: 10),
                   TextField(
                     controller: _passwordController,
                     style: TextStyle(color: Colors.white),
@@ -109,7 +108,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           borderSide: BorderSide(color: Colors.white)),
                     ),
                   ),
-                  SizedBox(height: size.height * 0.02),
+                  SizedBox(height: 10),
                   InkWell(
                     onTap: () async {
                       String email = _emailController.text;
@@ -150,7 +149,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
                   ),
-                  SizedBox(height: size.height * 0.02),
+                  SizedBox(height: 10),
                   InkWell(
                     onTap: () {
                       Navigator.push(context,

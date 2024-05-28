@@ -35,7 +35,11 @@ void main() async {
 
 void runPeriodicTask() async {
   var now = DateTime.now();
-  var targetTime = DateTime(now.year, now.month, now.day, 21, 54);
+  var targetTime = DateTime(now.year, now.month, now.day, 05, 00); //When resetting,
+  // we need to set the time and run the code. When we start the code again the next day,
+  // it doesn't reset except for total calories. I researched it, but I think this is not a problem with the code,
+  // since the app is not installed on the phone, it does not work for arrays in firestore when we turn off
+  // the computer. Otherwise, it works perfectly
   
   if (now.isAfter(targetTime)) {
     targetTime = targetTime.add(Duration(days: 1));
